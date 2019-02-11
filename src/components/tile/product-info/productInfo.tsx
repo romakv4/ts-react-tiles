@@ -2,7 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 
-export interface IProductInfo {data: any;}
+export interface IProductInfo {
+    description: string;
+    specs: string;
+    rating: number;
+    price: number;
+    valute: string;
+}
 
 class ProductInfo extends React.Component<IProductInfo> {
     
@@ -10,16 +16,16 @@ class ProductInfo extends React.Component<IProductInfo> {
         return (
             <div className="tile__info">
                 <div className="tile__info_description top-margin">
-                    {this.props.data.description}
+                    {this.props.description}
                 </div>
                 <div className="tile__info_specs top-margin">
-                    {this.props.data.specs}
+                    {this.props.specs}
                 </div>
                 <div className="tile__info_rating top-margin">
-                    {this.getRatingStars(this.props.data.rating)}
+                    {this.getRatingStars(this.props.rating)}
                 </div>
                 <div className="tile__info_price top-margin">
-                    {this.props.data.price} {this.props.data.valute}
+                    {this.props.price} {this.props.valute}
                 </div>
             </div>
         );

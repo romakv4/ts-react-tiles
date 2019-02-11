@@ -7,18 +7,22 @@ import './tile.css';
 
 class Tile extends React.Component {
 
+    private imagePath: string;
+
     public createTilesArray = () => {
 
         const tilesArray: any = [];
 
         for (const product of ProductData.products) {
 
+            this.imagePath = product.imagePath;
+
             tilesArray.push (
                 <div className="tile">
-                    <img src={product.imagePath} alt="" className="tile__picture" />
-                    <ProductInfo data={product}/>
+                    <img src={this.imagePath} alt="" className="tile__picture" />
+                    <ProductInfo description={product.description} specs={product.specs} rating={product.rating} price={product.price} valute={product.valute}/>
                     <Buttons/>
-                    <LogisticInfo data={product}/>
+                    <LogisticInfo inStock={product.inStock} shipping={product.shipping}/>
                 </div>
             );
         }
