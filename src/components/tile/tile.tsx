@@ -1,7 +1,8 @@
 import React from 'react';
 import ProductData from '../../data/productData.json';
 import Buttons from './buttons/buttons';
-import LogisticInfo from './logistic-info/logisticInfo';
+import InStock from './logistic-info/instock';
+import Shipping from './logistic-info/shipping';
 import Description from './product-info/description';
 import Image from './product-info/image';
 import Price from './product-info/price';
@@ -27,7 +28,10 @@ class Tile extends React.Component {
                         <Price price = {product.price} valute={product.valute}/>
                     </div>
                     <Buttons/>
-                    <LogisticInfo inStock = {product.inStock} shipping = {product.shipping}/>
+                    <div className="tile__logistic-info">
+                        <InStock inStock = {product.inStock}/>
+                        <Shipping shipping = {product.shipping}/>
+                    </div>
                 </div>
             );
         }
