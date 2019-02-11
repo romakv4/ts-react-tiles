@@ -88,11 +88,10 @@ body {
   .tile__picture {
     width: 200px;
     height: auto;
-    text-align: center;
   }
   
   .tile__info {
-    text-align: left;
+    text-align: center;
   }
   
   .tile__info_specs {

@@ -8,14 +8,13 @@ library.add(solFaStar, regFaStar, faHeart, faChartBar);
 
 class App extends React.Component {
 
-  public render () { 
-    return (
-      <div className="tiles-list">
-        <Tile />
-      </div>
-    );
-      
-  }
+    public render () { 
+        return (
+            <div className="tiles-list">
+                <Tile />
+            </div>
+        );  
+    }
 }
 
 export default App;

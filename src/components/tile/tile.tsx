@@ -2,12 +2,14 @@ import React from 'react';
 import ProductData from '../../data/productData.json';
 import Buttons from './buttons/buttons';
 import LogisticInfo from './logistic-info/logisticInfo';
-import ProductInfo from './product-info/productInfo';
+import Description from './product-info/description';
+import Image from './product-info/image';
+import Price from './product-info/price';
+import Rating from './product-info/rating';
+import Specs from './product-info/specs';
 import './tile.css';
 
 class Tile extends React.Component {
-
-    private imagePath: string;
 
     public createTilesArray = () => {
 
@@ -15,14 +17,17 @@ class Tile extends React.Component {
 
         for (const product of ProductData.products) {
 
-            this.imagePath = product.imagePath;
-
             tilesArray.push (
                 <div className="tile">
-                    <img src={this.imagePath} alt="" className="tile__picture" />
-                    <ProductInfo description={product.description} specs={product.specs} rating={product.rating} price={product.price} valute={product.valute}/>
+                    <div className="tile__info">
+                        <Image imagePath = {product.imagePath}/>
+                        <Description description = {product.description}/>
+                        <Specs specs = {product.specs}/>
+                        <Rating rating = {product.rating}/>
+                        <Price price = {product.price} valute={product.valute}/>
+                    </div>
                     <Buttons/>
-                    <LogisticInfo inStock={product.inStock} shipping={product.shipping}/>
+                    <LogisticInfo inStock = {product.inStock} shipping = {product.shipping}/>
                 </div>
             );
         }
